@@ -1,29 +1,51 @@
-// const heading = React.createElement('h1', { id: "heading" }, "Hello World from React!!");
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-// console.log(heading); // object
+// React.createElement => (React Element) JS Object => HTMLElement(render)
 
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(heading); // convert it to h1 tag put it up in the root
+const heading = React.createElement("h1", { id: "heading" }, "Namaste React🚀");
+console.log(heading);
 
-/**
- * 
- * <div id="parent"><div id="child"><h1>I am an h1 tag</h1></div></div>
- * 
- */
+// JSX - not html in js, but it is html like syntax
+// Not valid JS, browser don't understand, JS engine csn't read
+// Parcel is doing job behind the scenes
+// JSX (transpiled before it reaches the JS engine) - PARCEL - Babel compile/transpile(JSX -> JS)
+// JSX => React.createElement => (React Element) JS Object => HTMLElement(render)
 
+// React Element
+const jsxHeading = (
+  <h1 className="head" tabIndex="2">
+    Namaste React using JSX(React Element) 🚀
+  </h1>
+);
 
-const parent = React.createElement(
-    "div", { id: "parent"}, 
-    [React.createElement("div", { id: "child" }, 
-        [ React.createElement("h1", {}, "I am an h1 tag"), React.createElement("h2", {}, "I an an h2 tag") ]
-    ), React.createElement("div", { id: "child2" }, 
-        [ React.createElement("h1", {}, "I am an h1 tag"), React.createElement("h2", {}, "I an an h2 tag") ]
-    )]);
+// React Component
+// Class based Component - Old way - Use Js Classes
 
-// JSX to simplify this[React can be written in .jsx as well as .js]
+// Functional Component - New Way - Use JS Functions
+const Title = () => (
+  <h1 className="head" tabIndex="2">
+    Namaste React using First Functional Component 🚀
+  </h1>
+);
+
+// Component inside component => Component composition
+const HeadingComponent = () => (
+  <div id="container">
+    {jsxHeading}
+    <Title/>
+    {/* OR <Title></Title> */}
+    {/* {Title()} */}
+    <h1 className="heading"> Namaste React Second Functional Component 🚀🚀 </h1>
+  </div>
+);
+
+// OR
+// const HeadingComponent2 = () => {
+//  return <h1> Namaste React Functional Component </h1>
+// };
+// OR
+// const fn = () => true;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent); // root.render replace(not append) existing by whatever(parent) is passing now 
-
-console.log(parent);
-
+root.render(<HeadingComponent />);
