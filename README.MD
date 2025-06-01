@@ -81,3 +81,7 @@ hook - normal js function, comes with superpower
 (Normal JS utility functions written by meta devs)
 - useState() - Superpowerful React State Variables
 - useEffect()
+
+# Type of Routing
+1. Client Side Routing
+2. Server Side Routing
