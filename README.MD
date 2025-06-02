@@ -85,3 +85,18 @@ hook - normal js function, comes with superpower
 # Type of Routing
 1. Client Side Routing
 2. Server Side Routing
+
+# To break down app in smaller logical chunks(logical separation)
+known as:
+ - Chunking
+ - Code Splitting
+ - Dynamic bundling
+ - Lazy loading
+ - Ondemand loading
+
+ e.g.
+ makemytrip make bundles of components of 
+  - flights
+  - hotels
+  - homestays
+  - trains
