@@ -7,6 +7,9 @@ const User = ({name, location, contact}) => {
         // API calls
     }, [])
 
+    const getUserInfo = async () => {
+    }
+
     return(
         <div className="user-card">
             <h1>{count}</h1>
